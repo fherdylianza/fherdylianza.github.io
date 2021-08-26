@@ -76,6 +76,89 @@ body{
 	justify-content: space-around;
 }
 
+.hero > .nav > .navbar .thelist li ul{
+	/* display: none; */
+	display: block;
+	width: 13em;
+	display: flex;
+	margin-left: -1em;
+	margin-top: 1em;
+	padding: 10px 0px 10px 0px;
+	border-radius: 10px;
+	flex-direction: column;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+	font-size: 1rem;
+	height: auto;
+	display: none;
+	background-color: white;
+	position: absolute;
+	list-style: none !important;
+	color: blue !important;
+}
+
+.hero > .nav > .navbar .thelist li:hover ul{
+	display: flex;
+}
+
+.hero > .nav > .navbar .thelist li ul li a{
+	color: #2c3e50;
+}
+
+.hero > .nav > .navbar .thelist li ul li{
+	padding-top: 0;
+	padding-bottom: 10px;
+}
+
+.hero > .nav > .navbar .thelist li ul li a:hover{
+	font-family: var(--Ubuntu);
+	font-weight: 700;
+	font-size: 1.1rem;
+	padding-bottom: 10px;
+	color: #2c3e50;
+}
+
+/* Batas Navbar Dropdown */
+
+.popup-box > .trigger-menu > li > input{
+	width: 400px;
+	height: 50px;
+	top: 40px;
+	right: -20px;
+	position: absolute;
+}
+
+#cek2{
+	top: 90px;
+}
+
+.popup-box > .trigger-menu > li > .drop-m{
+	background-color: #EFEFF1;
+	display: none;
+	padding: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-radius: 13px;
+	transition: all .4s ease-in;
+}
+
+.popup-box > .trigger-menu > li > .drop-m > li > a{
+	color: #7f8c8d;
+	font-family: var(--Ubuntu);
+	font-weight: 400;
+}
+
+.popup-box > .trigger-menu > li > .drop-m > li > a:hover{
+
+	text-decoration: none;
+	color: #2c3e50;
+	font-weight: 600;
+}
+
+.popup-box > .trigger-menu > li:hover .drop-m{
+	display: block;
+}
+
+
 .section_state_of_art{
 	margin-top: 40px;
 }
@@ -141,6 +224,10 @@ body{
 .hero  div.nav nav.navbar section li{
 	margin-left: 50px;
 	color: white;
+	height: 100%;
+	cursor: pointer;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .hero  div.nav nav.navbar section{
@@ -203,6 +290,7 @@ body{
 
 .text-banner span{
 	color: white;
+	min-width: 17ch;
 	font-family: var(--Overpass);
 	font-weight: 600;
 	font-size: 3.3rem;
@@ -465,6 +553,12 @@ footer .body-four .container .row .rooms li a{
 	}
 }
 
+@media screen and (max-width: 593px) { 
+	.text-banner span{
+		width: 20ch;
+	}
+}
+
 
 @media screen and (max-width: 768px) { 
 	.text-banner{
@@ -566,9 +660,13 @@ footer .body-four .container .row .rooms li a{
 		transform: translateY(0);
 	}
 
+	.trigger-menu.hilang{
+		transform: translateY(-1000px);
+	}
+
 	.trigger-menu{
 		display: flex;
-		position: fixed;
+		position: relative;
 		width: 80%;
 		height: auto;
 		transform: translateY(-1000px);
@@ -582,7 +680,7 @@ footer .body-four .container .row .rooms li a{
 		padding-top: 20px;		
 		align-items: center;
 		border-radius: 10px;
-		transition: all .5s;
+		transition: all .5s ease-in;
 	}
 
 	.baris{
@@ -596,12 +694,14 @@ footer .body-four .container .row .rooms li a{
 	.trigger-menu li{
 		list-style: none;
 		margin-top: 30px;
+		width: 100%;
+		text-align: center;
 	}
 
 	.trigger-menu li a{
 		list-style: none;
 		color: var(--DarkBlue);
-		font-size: 1rem;
+		font-size: 1.2rem;
 	}
 
 	.section-design{
