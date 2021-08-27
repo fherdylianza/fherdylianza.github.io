@@ -104,9 +104,23 @@ body{
 	color: #2c3e50;
 }
 
+
+.hero > .nav > .navbar .thelist li .fa-chevron-up{
+	display: none;
+}
+
+.hero > .nav > .navbar .thelist li:hover .fa-chevron-down{
+	display: none;
+}
+
+.hero > .nav > .navbar .thelist li:hover .fa-chevron-up{
+	display: inline;
+}
+
 .hero > .nav > .navbar .thelist li ul li{
 	padding-top: 0;
 	padding-bottom: 10px;
+	cursor: pointer;
 }
 
 .hero > .nav > .navbar .thelist li ul li a:hover{
@@ -116,7 +130,6 @@ body{
 	padding-bottom: 10px;
 	color: #2c3e50;
 }
-
 /* Batas Navbar Dropdown */
 
 .popup-box > .trigger-menu > li > input{
@@ -135,16 +148,35 @@ body{
 	background-color: #EFEFF1;
 	display: none;
 	padding: 20px;
+	height: 0px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	border-radius: 13px;
-	transition: all .4s ease-in;
+	transition: all 3000ms linear;
+	animation: animasi 0.7s linear;
+}
+
+.popup-box > .trigger-menu > li .fa-chevron-up{
+	display: none;
+}
+
+.popup-box > .trigger-menu > li:hover .fa-chevron-down{
+	display: none;
+}
+
+.popup-box > .trigger-menu > li:hover .fa-chevron-up{
+	display: inline;
+}
+
+.popup-box > .trigger-menu > li > .drop-m > li{
+	cursor: pointer;
 }
 
 .popup-box > .trigger-menu > li > .drop-m > li > a{
 	color: #7f8c8d;
 	font-family: var(--Ubuntu);
 	font-weight: 400;
+	cursor: pointer;
 }
 
 .popup-box > .trigger-menu > li > .drop-m > li > a:hover{
@@ -156,6 +188,25 @@ body{
 
 .popup-box > .trigger-menu > li:hover .drop-m{
 	display: block;
+	height: 290px;
+}
+
+
+@keyframes animasi{
+	0%{
+		height: 0px;
+		color: transparent;
+	}
+
+	40%{
+		height: 100px;
+		color: transparent;
+	}
+
+	80%{
+		height: 290px;
+		color: transparent;
+	}
 }
 
 
@@ -672,7 +723,7 @@ footer .body-four .container .row .rooms li a{
 		transform: translateY(-1000px);
 		padding: 10px;
 		margin-left: 2.1em;
-		margin-top: 80px;
+		/* margin-top: 50px; */
 		flex-direction: column;
 		z-index: 1000;
 		justify-content: center;
